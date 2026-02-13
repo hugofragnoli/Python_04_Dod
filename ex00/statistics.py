@@ -19,12 +19,19 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                 else:
                     median = sort[nb_digits // 2]
                 print(f"median : {median}")
-            # std = ecart type
+            # std = ecart type = Racine de variance
             elif value == "std":
-                 mean_std = sum(args) / nb_digits
-                 # on a besoin de la variance donc on fera en dernier
-            # elif value == "var":
-            #     var = 
+                mean_std = sum(args) / nb_digits
+                sum_std = sum((x - mean_std) ** 2 for x in args)
+                var_std = sum_std / nb_digits
+                std = var_std ** 0.5
+                print(f"std : {std}")
+            # on a besoin de la variance donc on fera en dernier
+            elif value == "var":
+                mean_var = sum(args) / nb_digits
+                sum_square = sum((x - mean_var) ** 2 for x in args)
+                var = sum_square / nb_digits
+                print(f"var : {var}")
             else:
                 print("ERROR")
         return
