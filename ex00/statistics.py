@@ -19,8 +19,10 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                 else:
                     median = sort[nb_digits // 2]
                 print(f"median : {median}")
-            # elif value == "std":
-            #     std = sum(args)
+            # std = ecart type
+            elif value == "std":
+                 mean_std = sum(args) / nb_digits
+                 # on a besoin de la variance donc on fera en dernier
             # elif value == "var":
             #     var = 
             else:
