@@ -12,7 +12,7 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             elif value == "quartile":
                 first_quar = sort[nb_digits // 4]
                 last_quar = sort[(3 * nb_digits) // 4]
-                print(f"quartile : [{args[first_quar]}, {args[last_quar]}]")
+                print(f"quartile : [{first_quar}, {last_quar}]")
             elif value == "median":
                 if nb_digits % 2 == 0:
                     median = (sort[nb_digits // 2 - 1] + sort[nb_digits // 2]) / 2
