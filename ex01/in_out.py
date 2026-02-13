@@ -7,5 +7,9 @@ def pow(x: int | float) -> int | float:
     return x_pow
 
 def outer(x: int | float, function) -> object:
+    list_func = ["pow", "square"]
+    if function not in list_func:
+        print("Unknown function: please pass 'square' or 'pow' as function")
+        return 0
     
     return
