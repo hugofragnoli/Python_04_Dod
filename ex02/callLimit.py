@@ -5,6 +5,10 @@ def callLimit(limit: int):
             nonlocal count
             if count < limit:
                 count += 1
+                function(*args, **kwargs)
             else:
                 print(f"function {function} call too many times")
                 return 
+            return count
+        return limit_function
+    return callLimiter
