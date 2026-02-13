@@ -7,4 +7,17 @@ def generate_id() -> str:
 
 @dataclass
 class Student:
-    def __init__():
+        """Base class for a Student"""
+        name: str
+        surname: str
+        active: bool = True
+        id: str = field(init = False)
+        login: str = field(init = False)
+        def __post_init__(self):
+            """Cette méthode remplace la logique de __init__"""
+            self.id = generate_id()
+            self.login = f"{self.name[0]}{self.surname}"
+
+def new_stud_in_town(*args, **kwargs):
+     students = []
+     
