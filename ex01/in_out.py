@@ -1,15 +1,17 @@
 def square(x: int | float) -> int | float:
-    x_square = x * x
-    return x_square
+    return x * x
 
 def pow(x: int | float) -> int | float:
-    x_pow = x ** x
-    return x_pow
+    return x ** x
 
 def outer(x: int | float, function) -> object:
-    list_func = ["pow", "square"]
+    list_func = {
+        "square": square,
+        "pow": pow
+    }
     if function not in list_func:
-        print("Unknown function: please pass 'square' or 'pow' as function")
+        print(f"Unknown function: {function} please pass 'square' or 'pow' as function")
         return 0
     
-    return
+    res = list_func[function](x)
+    return res
