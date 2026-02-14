@@ -19,5 +19,7 @@ class Student:
             self.login = f"{self.name[0]}{self.surname}"
 
 def new_stud_in_town(*args, **kwargs):
-     students = []
+    students = []
+    for key, value in kwargs.items()
+
      
