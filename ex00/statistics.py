@@ -5,7 +5,7 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             nb_digits = len(args)
         if not all(isinstance(x, (int, float)) for x in args):
             raise ValueError("Args have to be digits only")
-        list_methods = ["std" , "quartile", "mean", "median", "var"]
+        list_methods = ["std", "quartile", "mean", "median", "var"]
         for key, value in kwargs.items():
             if value not in list_methods:
                 continue
@@ -23,7 +23,8 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
                 print(f"quartile : [{first_quar}, {last_quar}]")
             elif value == "median":
                 if nb_digits % 2 == 0:
-                    median = (sort[nb_digits // 2 - 1] + sort[nb_digits // 2]) / 2
+                    median = (sort[nb_digits // 2 - 1] + sort[nb_digits //
+                                                              2]) / 2
                 else:
                     median = sort[nb_digits // 2]
                 print(f"median : {median}")
@@ -47,4 +48,3 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
     except Exception as e:
         print(f"Error : {e}")
         return None
-
