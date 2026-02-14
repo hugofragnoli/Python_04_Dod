@@ -24,4 +24,12 @@ class Student:
 
 
 def new_stud_in_town(*args, **kwargs):
+    """Fonction pour créer une nouvelle instance de Student.
+
+    Args: (fonctionne en key - value)
+        *args: Arguments positionnels pour le constructeur de Student.
+        **kwargs: Arguments par mots-clés pour le constructeur de Student.
+
+    Returns:
+        Student: Une nouvelle instance de la classe Student."""
     return Student(**kwargs)

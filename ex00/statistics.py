@@ -1,4 +1,28 @@
 def ft_statistics(*args: any, **kwargs: any) -> None:
+    """
+    Calcule et affiche des statistiques de base sur une série de nombres.
+
+    La fonction traite des arguments positionnels numériques et affiche les
+    statistiques demandées via les arguments par mots-clés (kwargs).
+
+    Args:
+        *args (any): Une séquence de nombres (int ou float).
+                     Doit être non vide pour effectuer les calculs.
+        **kwargs (any): Les opérations demandées. Les valeurs autorisées sont :
+                        'mean', 'median', 'quartile', 'std', 'var'.
+
+    Comportement :
+        - Si args vide, affiche "ERROR" pour chaque demande valide dans kwargs.
+        - Si une valeur dans kwargs n'est pas dans la liste autorisée-> ignorée
+        - Si un élément de args n'est pas un nombre, lève une ValueError.
+
+    Statistiques calculées :
+        - mean : La moyenne arithmétique.
+        - median : La valeur centrale de la série triée.
+        - quartile : Les 25e et 75e centiles (premier et troisième quartiles).
+        - var : La variance (moyenne des carrés des écarts à la moyenne).
+        - std : L'écart-type (racine carrée de la variance).
+    """
     try:
         if args:
             sort = sorted(args)
