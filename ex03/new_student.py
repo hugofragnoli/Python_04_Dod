@@ -19,8 +19,4 @@ class Student:
             self.login = f"{self.name[0]}{self.surname}"
 
 def new_stud_in_town(*args, **kwargs):
-    list_fields = ["name", "surname", "active"]
-    for key in kwargs:
-        if key not in list_fields:
-            raise TypeError(f"Student.__init__() got an unexpected keyword argument '{key}'")
     return Student(**kwargs)
