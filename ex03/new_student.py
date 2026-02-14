@@ -16,10 +16,9 @@ class Student:
         def __post_init__(self):
             """Cette méthode remplace la logique de __init__"""
             self.id = generate_id()
-            self.login = f"{self.name[0].upper}{self.surname}"
+            self.login = f"{self.name[0]}{self.surname}"
 
 def new_stud_in_town(*args, **kwargs):
-    students = []
     list_fields = ["name", "surname", "active"]
     for key in kwargs:
         if key not in list_fields:
